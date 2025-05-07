@@ -1,0 +1,31 @@
+{
+	"private": true,
+	"name": "appius-site",
+	"type": "module",
+	"scripts": {
+		"postinstall": "nuxt prepare",
+		"build": "nuxt build",
+		"dev": "nuxt dev",
+		"preview": "nuxt preview",
+		"openapi": "openapi-typescript http://localhost:55235/umbraco/swagger/delivery/swagger.json -o composables/umbraco/api.openapi.generated",
+		"format": "eslint --fix . && prettier --write ."
+	},
+	"dependencies": {
+		"@nuxt/eslint": "^1.4.1",
+		"@nuxtjs/tailwindcss": "^6.14.0",
+		"@pinia/nuxt": "^0.11.1",
+		"@unhead/vue": "^2.0.10",
+		"nuxt": "^3.17.5",
+		"openapi-fetch": "^0.14.0",
+		"pinia": "^3.0.3",
+		"vue": "^3.5.17",
+		"vue-router": "^4.5.1"
+	},
+	"devDependencies": {
+		"eslint": "^9.29.0",
+		"openapi-typescript": "^7.8.0",
+		"prettier": "^3.5.3",
+		"sass-embedded": "^1.89.2",
+		"typescript": "^5.8.3"
+	}
+}
