@@ -1,11 +1,11 @@
-import type { ContentType } from '~/umbraco/types/content-type';
+import type { IContent } from '~/umbraco/client/client';
 
-export interface BlockGrid<I extends BlockGridItem = BlockGridItem> {
+export interface IBlockGrid<I extends IBlockGridItem = IBlockGridItem> {
 	gridColumns: number;
 	items: I[];
 }
 
-export interface BlockGridItem<C extends ContentType = ContentType> {
+export interface IBlockGridItem<C extends IContent = IContent> {
 	rowSpan: number;
 	columnSpan: number;
 	areaGridColumns: number;

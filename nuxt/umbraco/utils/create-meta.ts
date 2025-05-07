@@ -1,10 +1,13 @@
 import type { UseHeadInput } from '@unhead/vue';
 import { createTitle } from '~/shared/utils/create-title';
-import type { PageMetaComposition } from '~/umbraco/types/document-types/pages/compositions/page-meta';
+import type { IPageMetaComposition } from '~/umbraco/types/document-types/pages/compositions/page-meta';
 
-type MetaCompositionWithUndefined = {
-	[K in keyof PageMetaComposition]: PageMetaComposition[K] | undefined;
-};
+type MetaCompositionWithUndefined =
+	| {
+			[K in keyof IPageMetaComposition]: IPageMetaComposition[K] | undefined;
+	  }
+	| null
+	| undefined;
 
 /**
  * Returns a `useHead` object using the Umbraco meta composition for a page.
@@ -15,11 +18,11 @@ export const createUmbracoHead = (
 	data: MetaCompositionWithUndefined
 ): UseHeadInput => {
 	return {
-		title: createTitle(data.metaTitle),
+		title: createTitle(data?.metaTitle),
 		meta: [
 			{
 				name: 'description',
-				content: data.metaDescription
+				content: data?.metaDescription
 			}
 		]
 	};

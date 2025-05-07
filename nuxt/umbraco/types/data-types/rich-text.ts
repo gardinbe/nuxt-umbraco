@@ -1,6 +1,6 @@
-import type { ContentType } from '~/umbraco/types/content-type';
+import type { IContent } from '~/umbraco/client/client';
 
-export interface RichText {
-	blocks: ContentType[];
+export interface IRichText {
+	blocks: IContent[];
 	markup: string;
 }

@@ -7,6 +7,7 @@ export default withNuxt({
 		'vue/html-self-closing': ['error', { html: { void: 'always' } }],
 		'vue/multi-word-component-names': 'off',
 		'vue/no-v-html': 'off',
+		'vue/no-v-text-v-html-on-component': 'off',
 		'vue/no-multiple-template-root': 'off'
 	}
 });

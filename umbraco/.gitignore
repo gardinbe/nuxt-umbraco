@@ -472,7 +472,7 @@ umbraco-package-schema.json
 
 # SQLite database files
 
-# TODO: re-comment these ignored files
+# TODO: re-comment these
 
 # /umbraco/Data/*.sqlite.db
 # /umbraco/Data/*.sqlite.db-shm
@@ -482,11 +482,15 @@ umbraco-package-schema.json
 /umbraco/Logs/
 
 # Media files
-/wwwroot/media/
+
+# TODO: re-comment this
+
+# /wwwroot/media/
 
 # --- Custom
 
-Smidge
 .idea
+.vscode
+.vs
+Smidge
 Views
-wwwroot

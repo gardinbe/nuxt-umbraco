@@ -13,19 +13,19 @@ await app.BootUmbracoAsync();
 
 app.UseSwagger();
 
-app.UseCors(p =>
+app.UseCors((p) =>
 {
 	p.WithOrigins("http://localhost:3000")
 		.AllowAnyHeader();
 });
 
 app.UseUmbraco()
-	.WithMiddleware(u =>
+	.WithMiddleware((u) =>
 	{
 		u.UseBackOffice();
 		u.UseWebsite();
 	})
-	.WithEndpoints(u =>
+	.WithEndpoints((u) =>
 	{
 		u.UseInstallerEndpoints();
 		u.UseBackOfficeEndpoints();

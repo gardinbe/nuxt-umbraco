@@ -1,9 +1,9 @@
-import { defineAsyncComponent as def, type Component } from 'vue';
+import type { Component } from 'vue';
 import blocks from '~/umbraco/blocks';
 import pages from '~/umbraco/pages';
 
 export type ComponentMap = {
-	[key: string]: () => Promise<Component>;
+	[key: string]: Component;
 };
 
 /**
@@ -11,17 +11,17 @@ export type ComponentMap = {
  * @param name - The content type alias.
  * @returns Component, or null.
  */
-const getUmbracoComponent = (name: string, components: ComponentMap) => {
-	const component = components[name];
-	return component ? def(component) : null;
-};
+const getUmbracoComponent = (
+	name: string | null | undefined,
+	components: ComponentMap
+) => (name && components[name]) ?? null;
 
 /**
  * Returns the component for a given Umbraco page content type alias.
  * @param name - The page content type alias.
  * @returns Component, or null.
  */
-export const getUmbracoPageComponent = (name: string) =>
+export const getUmbracoPageComponent = (name?: string | null | undefined) =>
 	getUmbracoComponent(name, pages);
 
 /**
@@ -29,5 +29,5 @@ export const getUmbracoPageComponent = (name: string) =>
  * @param name - The block content type alias.
  * @returns Component, or null.
  */
-export const getUmbracoBlockComponent = (name: string) =>
+export const getUmbracoBlockComponent = (name?: string | null | undefined) =>
 	getUmbracoComponent(name, blocks);

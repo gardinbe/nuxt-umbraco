@@ -1,5 +1,5 @@
-import type { RichText } from '~/umbraco/types/data-types/rich-text';
+import type { IRichText } from '~/umbraco/types/data-types/rich-text';
 
-export interface ContentBlock {
-	body: RichText | null;
+export interface IContentBlock {
+	body: IRichText | null;
 }

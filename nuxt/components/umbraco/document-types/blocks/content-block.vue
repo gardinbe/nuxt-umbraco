@@ -1,12 +1,12 @@
 <template>
-	<div
+	<UmbracoDataTypesRichText
 		v-if="body"
-		v-html="body.markup"
+		v-bind="body"
 	/>
 </template>
 
 <script setup lang="ts">
-import type { ContentBlock } from '~/umbraco/types/document-types/blocks/content-block';
+import type { IContentBlock } from '~/umbraco/types/document-types/blocks/content-block';
 
-defineProps<ContentBlock>();
+defineProps<IContentBlock>();
 </script>

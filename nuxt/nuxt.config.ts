@@ -3,7 +3,7 @@ import type { NuxtConfig } from 'nuxt/config';
 export default {
 	modules: ['@nuxt/eslint', '@nuxtjs/tailwindcss'],
 	devtools: {
-		enabled: true
+		enabled: false
 	},
 	imports: {
 		scan: false // causes discrepancies

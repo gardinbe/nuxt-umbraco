@@ -1,4 +1,5 @@
 import type { ComponentMap } from '~/umbraco/utils/get-component';
+import { defineAsyncComponent as def } from 'vue';
 
 /**
  * Map of all block components.
@@ -6,6 +7,7 @@ import type { ComponentMap } from '~/umbraco/utils/get-component';
  * Keys are the content type aliases, and values are the associated components.
  */
 export default {
-	contentBlock: () =>
-		import('~/components/umbraco/document-types/blocks/content-block.vue')
+	contentBlock: def(
+		() => import('~/components/umbraco/document-types/blocks/content-block.vue')
+	)
 } satisfies ComponentMap;

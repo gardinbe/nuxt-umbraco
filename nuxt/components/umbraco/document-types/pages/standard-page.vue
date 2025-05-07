@@ -1,21 +1,25 @@
 <template>
-	<UmbracoDataTypesBlockGrid
-		v-if="body"
-		v-bind="body"
-	/>
-
-	<div class="container mx-auto px-4">
-		<NuxtLink to="/">Return to homepage</NuxtLink>
-		<NuxtLink to="/about">About page</NuxtLink>
-		<NuxtLink to="/typography">Typography page</NuxtLink>
-	</div>
+	<header>
+		<UmbracoDocumentTypesGlobalNavigation
+			v-if="global.navigation.properties"
+			v-bind="global.navigation.properties"
+		/>
+	</header>
+	<main>
+		<UmbracoDataTypesBlockGrid
+			v-if="page.properties?.body"
+			v-bind="page.properties.body"
+		/>
+	</main>
+	<footer />
 </template>
 
 <script setup lang="ts">
-import type { StandardPage } from '~/umbraco/types/document-types/pages/standard-page';
+import type { Data } from '~/middleware/content';
+import type { IStandardPage } from '~/umbraco/types/document-types/pages/standard-page';
 import { createUmbracoHead } from '~/umbraco/utils/create-meta';
 
-const props = defineProps<StandardPage>();
+const props = defineProps<Data<IStandardPage>>();
 
-useHead(createUmbracoHead(props));
+useHead(createUmbracoHead(props.page.properties));
 </script>

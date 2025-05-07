@@ -1,5 +1,5 @@
 <template>
-	<div class="container mx-auto px-4">
+	<div class="std-container">
 		<h1>Heading One</h1>
 		<p>Paragraph One</p>
 		<h2>Heading Two</h2>
