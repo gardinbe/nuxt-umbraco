@@ -1,0 +1,15 @@
+import type { NuxtConfig } from 'nuxt/config';
+
+export default {
+	modules: ['@nuxt/eslint', '@nuxtjs/tailwindcss'],
+	devtools: {
+		enabled: true
+	},
+	imports: {
+		scan: false // causes discrepancies
+	},
+	compatibilityDate: '2024-11-01',
+	future: {
+		compatibilityVersion: 4
+	}
+} satisfies NuxtConfig;
