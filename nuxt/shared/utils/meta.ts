@@ -3,7 +3,7 @@
  * @param parts - Title parts.
  * @returns HTML title.
  */
-export const createTitle = (
+export const createMetaTitle = (
 	...parts: (string | number | null | undefined)[]
 ) => {
 	return ['Appius'].concat(parts.filter((p): p is string => !!p)).join(' • ');

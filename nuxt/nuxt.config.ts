@@ -6,7 +6,8 @@ export default {
 		enabled: false
 	},
 	imports: {
-		scan: false // causes discrepancies
+		scan: true,
+		dirs: ['shared/**', 'composables/**']
 	},
 	compatibilityDate: '2024-11-01',
 	future: {

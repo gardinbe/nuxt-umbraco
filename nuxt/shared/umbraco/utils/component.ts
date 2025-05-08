@@ -1,7 +1,3 @@
-import type { Component } from 'vue';
-import blocks from '~/umbraco/blocks';
-import pages from '~/umbraco/pages';
-
 export type ComponentMap = {
 	[key: string]: Component;
 };

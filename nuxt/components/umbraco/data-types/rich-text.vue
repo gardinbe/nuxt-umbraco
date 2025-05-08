@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import type { IRichText } from '~/umbraco/types/data-types/rich-text';
+import type { IUmbracoRichText } from '#imports';
 
-defineProps<IRichText>();
+defineProps<IUmbracoRichText>();
 </script>

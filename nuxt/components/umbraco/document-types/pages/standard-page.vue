@@ -1,25 +1,13 @@
 <template>
-	<header>
-		<UmbracoDocumentTypesGlobalNavigation
-			v-if="global.navigation.properties"
-			v-bind="global.navigation.properties"
-		/>
-	</header>
-	<main>
-		<UmbracoDataTypesBlockGrid
-			v-if="page.properties?.body"
-			v-bind="page.properties.body"
-		/>
-	</main>
-	<footer />
+	<UmbracoDataTypesBlockGrid
+		v-if="body"
+		v-bind="body"
+	/>
 </template>
 
 <script setup lang="ts">
-import type { Data } from '~/middleware/content';
-import type { IStandardPage } from '~/umbraco/types/document-types/pages/standard-page';
-import { createUmbracoHead } from '~/umbraco/utils/create-meta';
+import type { IUmbracoStandardPage } from '#imports';
 
-const props = defineProps<Data<IStandardPage>>();
-
-useHead(createUmbracoHead(props.page.properties));
+const props = defineProps<IUmbracoStandardPage>();
+useHead(createUmbracoHead(props));
 </script>

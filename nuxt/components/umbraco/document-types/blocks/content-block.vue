@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import type { IContentBlock } from '~/umbraco/types/document-types/blocks/content-block';
+import type { IUmbracoContentBlock } from '#imports';
 
-defineProps<IContentBlock>();
+defineProps<IUmbracoContentBlock>();
 </script>

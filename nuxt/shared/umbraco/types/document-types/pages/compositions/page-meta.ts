@@ -1,4 +1,4 @@
-export interface IPageMetaComposition {
+export interface IUmbracoPageMetaComposition {
 	metaTitle: string | null;
 	metaDescription: string | null;
 }

@@ -6,6 +6,9 @@
 	],
 	"compilerOptions": {
 		"paths": {
+			"#imports": [
+				"./.nuxt/imports.d.ts"
+			],
 			"~/*": [
 				"./*"
 			]

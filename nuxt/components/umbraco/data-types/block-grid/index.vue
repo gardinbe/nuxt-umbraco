@@ -7,7 +7,7 @@
 			:row-span="data.rowSpan"
 			:area-grid-columns="gridColumns"
 		>
-			<Component
+			<component
 				:is="component"
 				v-if="component && data.content.properties"
 				v-bind="data.content.properties"
@@ -23,10 +23,9 @@
 </template>
 
 <script setup lang="ts">
-import { getUmbracoBlockComponent } from '~/umbraco/utils/get-component';
-import type { IBlockGrid } from '~/umbraco/types/data-types/block-grid';
+import type { IUmbracoBlockGrid } from '#imports';
 
-const props = defineProps<IBlockGrid>();
+const props = defineProps<IUmbracoBlockGrid>();
 const blocks = props.items.map(
 	(i) => [i, getUmbracoBlockComponent(i.content.contentType)] as const
 );

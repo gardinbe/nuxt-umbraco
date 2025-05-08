@@ -27,7 +27,5 @@
 </template>
 
 <script setup lang="ts">
-import { createTitle } from '~/shared/utils/create-title';
-
-useHead({ title: createTitle('Typography') });
+useHead({ title: createMetaTitle('Typography') });
 </script>

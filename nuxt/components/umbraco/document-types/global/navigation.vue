@@ -7,7 +7,7 @@
 			<img
 				v-if="img"
 				class="w-auto h-full object-contain"
-				:src="getMediaUrl(img.url)"
+				:src="getUmbracoMediaUrl(img.url)"
 				:alt="img.name ?? ''"
 				:title="img.name ?? ''"
 				:width="img.width ?? ''"
@@ -30,10 +30,8 @@
 </template>
 
 <script setup lang="ts">
-import { getMediaUrl } from '~/umbraco/client/client';
-import type { INavigation } from '~/umbraco/types/document-types/global/navigation';
+import type { IUmbracoNavigation } from '#imports';
 
-const props = defineProps<INavigation>();
-
+const props = defineProps<IUmbracoNavigation>();
 const img = props.logo[0];
 </script>

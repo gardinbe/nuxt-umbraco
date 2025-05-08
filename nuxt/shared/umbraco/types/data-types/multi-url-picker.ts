@@ -1,6 +1,6 @@
-export type IMultiUrlPicker = IMultiUrlPickerItem[];
+export type IUmbracoMultiUrlPicker = IUmbracoMultiUrlPickerItem[];
 
-export interface IMultiUrlPickerItem {
+export interface IUmbracoMultiUrlPickerItem {
 	url: string | null;
 	queryString: string | null;
 	title: string;
