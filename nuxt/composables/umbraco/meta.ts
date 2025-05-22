@@ -13,8 +13,7 @@ type MaybeMetaComposition =
  * @returns `useHead` result object.
  * @see https://nuxt.com/docs/api/composables/use-head
  */
-export const useUmbracoHead = (data: MaybeMetaComposition) =>
-	useHead(createUmbracoHead(data));
+export const useUmbracoHead = (data: MaybeMetaComposition) => useHead(createUmbracoHead(data));
 
 /**
  * Returns a `useHead` input object using the Umbraco meta composition for a page.

@@ -1,12 +1,3 @@
 {
-	"extends": ["./.nuxt/tsconfig.json", "./tsconfig.base.json"],
-	"compilerOptions": {
-		"paths": {
-			"#imports": ["./.nuxt/imports.d.ts"],
-			"#build/*": ["./.nuxt/*"],
-			"~/*": ["./*"],
-			"~pages/*": ["./components/umbraco/document-types/pages/*"],
-			"~blocks/*": ["./components/umbraco/document-types/blocks/*"]
-		}
-	}
+	"extends": ["./.nuxt/tsconfig.json", "./tsconfig.base.json"]
 }
