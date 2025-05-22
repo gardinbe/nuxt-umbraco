@@ -1,6 +1,6 @@
 import type { UseHeadInput } from '@unhead/vue';
 
-type MetaCompositionWithUndefined =
+type MaybeMetaComposition =
 	| {
 			[K in keyof IUmbracoPageMetaComposition]: IUmbracoPageMetaComposition[K] | undefined;
 	  }
@@ -13,7 +13,7 @@ type MetaCompositionWithUndefined =
  * @returns `useHead` result object.
  * @see https://nuxt.com/docs/api/composables/use-head
  */
-export const useUmbracoHead = (data: MetaCompositionWithUndefined) =>
+export const useUmbracoHead = (data: MaybeMetaComposition) =>
 	useHead(createUmbracoHead(data));
 
 /**
@@ -22,7 +22,7 @@ export const useUmbracoHead = (data: MetaCompositionWithUndefined) =>
  * @returns `useHead` input object.
  * @see https://nuxt.com/docs/api/composables/use-head
  */
-const createUmbracoHead = (data: MetaCompositionWithUndefined): UseHeadInput => {
+const createUmbracoHead = (data: MaybeMetaComposition): UseHeadInput => {
 	return {
 		title: createMetaTitle(data?.metaTitle),
 		meta: [
