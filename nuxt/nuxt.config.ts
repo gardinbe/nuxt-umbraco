@@ -7,7 +7,7 @@ export default {
 	},
 	imports: {
 		scan: true,
-		dirs: ['shared/**', 'composables/**']
+		dirs: ['shared/**', 'composables/**', 'umbraco/**']
 	},
 	compatibilityDate: '2024-11-01',
 	future: {

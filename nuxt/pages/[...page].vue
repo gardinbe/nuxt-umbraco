@@ -1,18 +1,19 @@
 <template>
 	<component
 		:is="component"
-		v-if="component && page.properties"
-		v-bind="page.properties"
+		v-if="component && data.properties"
+		v-bind="data.properties"
 	/>
 	<h1
 		v-else
 		class="text-red-600"
 	>
-		Unknown page content type: {{ page.contentType }}
+		Unknown page content type: {{ data.contentType }}
 	</h1>
 </template>
 
 <script setup lang="ts">
-const page = await useUmbracoContent();
-const component = getUmbracoPageComponent(page.value.contentType);
+const route = useRoute();
+const data = await useUmbraco(route.path);
+const component = getComponent(data.value.contentType);
 </script>

@@ -2,9 +2,7 @@ import type { UseHeadInput } from '@unhead/vue';
 
 type MetaCompositionWithUndefined =
 	| {
-			[K in keyof IUmbracoPageMetaComposition]:
-				| IUmbracoPageMetaComposition[K]
-				| undefined;
+			[K in keyof IUmbracoPageMetaComposition]: IUmbracoPageMetaComposition[K] | undefined;
 	  }
 	| null
 	| undefined;
@@ -14,9 +12,7 @@ type MetaCompositionWithUndefined =
  * @param data - Umbraco Meta composition.
  * @returns `useHead` object.
  */
-export const createUmbracoHead = (
-	data: MetaCompositionWithUndefined
-): UseHeadInput => {
+export const createUmbracoHead = (data: MetaCompositionWithUndefined): UseHeadInput => {
 	return {
 		title: createMetaTitle(data?.metaTitle),
 		meta: [

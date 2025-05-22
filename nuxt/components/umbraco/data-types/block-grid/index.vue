@@ -26,7 +26,5 @@
 import type { IUmbracoBlockGrid } from '#imports';
 
 const props = defineProps<IUmbracoBlockGrid>();
-const blocks = props.items.map(
-	(i) => [i, getUmbracoBlockComponent(i.content.contentType)] as const
-);
+const blocks = props.items.map((i) => [i, getComponent(i.content.contentType)] as const);
 </script>

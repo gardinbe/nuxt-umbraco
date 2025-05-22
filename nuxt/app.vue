@@ -1,6 +1,6 @@
 <template>
 	<NuxtLayout
-		v-bind="global"
+		v-bind="globalData"
 		name="umbraco-default"
 	>
 		<NuxtPage />
@@ -8,5 +8,5 @@
 </template>
 
 <script setup lang="ts">
-const global = await useUmbracoGlobalContent();
+const globalData = await useUmbracoGlobal();
 </script>

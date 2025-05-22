@@ -9,5 +9,4 @@ export type IUmbracoContent<T extends Pojo = Pojo> = Prettify<
 	}
 >;
 
-export type IUmbracoMediaWithCrops =
-	components['schemas']['IApiMediaWithCropsResponseModel'];
+export type IUmbracoMediaWithCrops = components['schemas']['IApiMediaWithCropsResponseModel'];
