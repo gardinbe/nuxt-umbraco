@@ -1,10 +1,10 @@
 import createClient from 'openapi-fetch';
 
 /**
- * Umbraco HTTP client.
+ * Umbraco Content Delivery API client.
  */
-const client = createClient<paths>({
-	// TODO: update depending on environment
+export const umbracoContentClient = createClient<paths>({
+	// todo: update depending on environment
 	baseUrl: 'http://localhost:55235'
 });
 
@@ -14,14 +14,17 @@ const client = createClient<paths>({
  * @param path - Path of the Umbraco content item.
  * @returns Umbraco content item, or null.
  */
-export const getUmbracoContent = async <P extends Pojo = Pojo>(
+export const getUmbracoContent = async <P extends POJO = POJO>(
 	path: string
 ): Promise<IUmbracoContent<P>> => {
-	const { data, error } = await client.GET('/umbraco/delivery/api/v2/content/item/{path}', {
-		params: {
-			path: { path }
+	const { data, error } = await umbracoContentClient.GET(
+		'/umbraco/delivery/api/v2/content/item/{path}',
+		{
+			params: {
+				path: { path }
+			}
 		}
-	});
+	);
 
 	if (error) {
 		throw createError({
@@ -30,7 +33,6 @@ export const getUmbracoContent = async <P extends Pojo = Pojo>(
 		});
 	}
 
-	// TODO: proper validation
-
+	// todo: proper validation
 	return data as IUmbracoContent<P>;
 };

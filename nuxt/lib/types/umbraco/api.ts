@@ -3,7 +3,7 @@ export interface IUmbracoGlobalContent {
 	footer: IUmbracoContent<IUmbracoFooter>;
 }
 
-export type IUmbracoContent<T extends Pojo = Pojo> = Prettify<
+export type IUmbracoContent<T extends POJO = POJO> = Prettify<
 	components['schemas']['IApiContentResponseModel'] & {
 		readonly properties?: T;
 	}

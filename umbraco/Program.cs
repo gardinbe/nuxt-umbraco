@@ -19,7 +19,7 @@ app.UseCors((p) =>
 		.AllowAnyHeader();
 });
 
-app.UseUmbraco()
+app.useUmbracoContent()
 	.WithMiddleware((u) =>
 	{
 		u.UseBackOffice();

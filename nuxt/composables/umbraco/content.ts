@@ -4,7 +4,7 @@
  * @param path - Path of the Umbraco content item.
  * @returns Umbraco content item.
  */
-export const useUmbraco = async <P extends Pojo = Pojo>(
+export const useUmbracoContent = async <P extends POJO = POJO>(
 	path: string
 ): Promise<Ref<IUmbracoContent<P>>> => {
 	const { data, error } = await useAsyncData(path, () => getUmbracoContent(path)!);

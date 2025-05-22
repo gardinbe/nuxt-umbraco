@@ -472,7 +472,7 @@ umbraco-package-schema.json
 
 # SQLite database files
 
-# TODO: re-comment these
+# todo: re-comment these
 
 # /umbraco/Data/*.sqlite.db
 # /umbraco/Data/*.sqlite.db-shm
@@ -483,7 +483,7 @@ umbraco-package-schema.json
 
 # Media files
 
-# TODO: re-comment this
+# todo: re-comment this
 
 # /wwwroot/media/
 

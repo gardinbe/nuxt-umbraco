@@ -1,12 +1,11 @@
 <template>
-	<NuxtLayout
-		v-bind="globalData"
-		name="umbraco-default"
-	>
+	<NuxtLayout :name="layout">
 		<NuxtPage />
 	</NuxtLayout>
 </template>
 
 <script setup lang="ts">
-const globalData = await useUmbracoGlobal();
+import type { LayoutKey } from '#build/types/layouts';
+
+const layout = useState<LayoutKey>('layout', () => 'umbraco-default');
 </script>

@@ -7,15 +7,17 @@
 		"build": "nuxt build",
 		"dev": "nuxt dev",
 		"preview": "nuxt preview",
-		"openapi": "openapi-typescript http://localhost:55235/umbraco/swagger/delivery/swagger.json -o umbraco/client/generated.ts",
+		"openapi": "openapi-typescript http://localhost:55235/umbraco/swagger/delivery/swagger.json -o lib/clients/umbraco/openapi.generated.ts",
 		"format": "eslint --fix . && prettier --write ."
 	},
 	"dependencies": {
 		"@nuxt/eslint": "^1.3.0",
 		"@nuxtjs/tailwindcss": "^6.14.0",
+		"@pinia/nuxt": "^0.11.0",
 		"@unhead/vue": "^2.0.8",
 		"nuxt": "^3.17.2",
 		"openapi-fetch": "^0.13.7",
+		"pinia": "^3.0.2",
 		"vue": "^3.5.13",
 		"vue-router": "^4.5.1"
 	},

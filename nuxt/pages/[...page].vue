@@ -8,12 +8,15 @@
 		v-else
 		class="text-red-600"
 	>
-		Unknown page content type: {{ data.contentType }}
+		Unknown page content type alias: {{ data.contentType }}
 	</h1>
 </template>
 
 <script setup lang="ts">
+// gets the current path
 const route = useRoute();
-const data = await useUmbraco(route.path);
-const component = getComponent(data.value.contentType);
+// retrieves page content for current path from umbraco cd api
+const data = await useUmbracoContent(route.path);
+// resolves the component for the page's content type alias
+const component = resolveUmbracoComponent(data.value.contentType);
 </script>

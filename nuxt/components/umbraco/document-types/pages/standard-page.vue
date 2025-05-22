@@ -9,5 +9,5 @@
 import type { IUmbracoStandardPage } from '#imports';
 
 const props = defineProps<IUmbracoStandardPage>();
-useHead(createUmbracoHead(props));
+useUmbracoHead(props);
 </script>

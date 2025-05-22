@@ -1,8 +1,8 @@
 <template>
 	<header>
 		<UmbracoDocumentTypesGlobalNavigation
-			v-if="navigation.properties"
-			v-bind="navigation.properties"
+			v-if="data.navigation.properties"
+			v-bind="data.navigation.properties"
 		/>
 	</header>
 	<main>
@@ -10,14 +10,13 @@
 	</main>
 	<footer>
 		<UmbracoDocumentTypesGlobalFooter
-			v-if="footer.properties"
-			v-bind="footer.properties"
+			v-if="data.footer.properties"
+			v-bind="data.footer.properties"
 		/>
 	</footer>
 </template>
 
 <script setup lang="ts">
-import type { IUmbracoGlobalContent } from '#imports';
-
-defineProps<IUmbracoGlobalContent>();
+// retrieves global content from umbraco cd api
+const data = await useUmbracoGlobalContent();
 </script>

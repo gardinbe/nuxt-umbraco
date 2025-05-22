@@ -3,7 +3,10 @@
 	"compilerOptions": {
 		"paths": {
 			"#imports": ["./.nuxt/imports.d.ts"],
-			"~/*": ["./*"]
+			"#build/*": ["./.nuxt/*"],
+			"~/*": ["./*"],
+			"~pages/*": ["./components/umbraco/document-types/pages/*"],
+			"~blocks/*": ["./components/umbraco/document-types/blocks/*"]
 		}
 	}
 }
