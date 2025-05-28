@@ -1,5 +1,5 @@
-import type { IUmbracoPageMetaComposition } from '#imports';
-
-export interface IUmbracoStandardPage extends IUmbracoPageMetaComposition {
-	body: IUmbracoBlockGrid | null;
-}
+export type UStandardPage = /* @vue-ignore */ UDocumentType<
+	UPageMetaComposition & {
+		body: UBlockGrid;
+	}
+>;

@@ -1,6 +1,6 @@
 <template>
-	<UmbracoDataTypesBlockGridRow :grid-columns="gridColumns">
-		<UmbracoDataTypesBlockGridColumn
+	<UmbracoBlockgridRow :grid-columns="gridColumns">
+		<UmbracoBlockgridColumn
 			v-for="{ data, component } in blocks"
 			:key="data.content.id!"
 			:column-span="data.columnSpan"
@@ -18,16 +18,16 @@
 			>
 				Unknown block content type alias: {{ data.content.contentType }}
 			</h1>
-		</UmbracoDataTypesBlockGridColumn>
-	</UmbracoDataTypesBlockGridRow>
+		</UmbracoBlockgridColumn>
+	</UmbracoBlockgridRow>
 </template>
 
 <script setup lang="ts">
-import type { IUmbracoBlockGrid } from '#imports';
+import type { UBlockGrid } from '#imports';
 
-const props = defineProps<IUmbracoBlockGrid>();
+const props = defineProps<UBlockGrid>();
 const blocks = props.items.map((i) => ({
 	data: i,
-	component: resolveUmbracoComponent(i.content.contentType)
+	component: resolve.component(i.content.contentType)
 }));
 </script>

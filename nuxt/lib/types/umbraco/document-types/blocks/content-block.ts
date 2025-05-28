@@ -1,3 +1,3 @@
-export interface IUmbracoContentBlock {
-	body: IUmbracoRichText | null;
-}
+export type UContentBlock = /* @vue-ignore */ UDocumentType<{
+	body: URichText;
+}>;

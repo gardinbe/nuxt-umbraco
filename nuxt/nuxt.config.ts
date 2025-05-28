@@ -7,11 +7,10 @@ export default {
 		enabled: false
 	},
 	alias: {
-		'~pages': join(import.meta.dirname, 'components/umbraco/document-types/pages'),
-		'~blocks': join(import.meta.dirname, 'components/umbraco/document-types/blocks')
+		'~pages': join(import.meta.dirname, 'components/umbraco/pages'),
+		'~blocks': join(import.meta.dirname, 'components/umbraco/blocks')
 	},
 	imports: {
-		scan: true,
 		dirs: ['lib/**', 'composables/**']
 	},
 	compatibilityDate: '2024-11-01',

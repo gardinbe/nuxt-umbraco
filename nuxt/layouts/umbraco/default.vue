@@ -1,22 +1,17 @@
 <template>
-	<header>
-		<UmbracoDocumentTypesGlobalNavigation
-			v-if="data.navigation.properties"
-			v-bind="data.navigation.properties"
-		/>
+	<header v-if="global.properties">
+		<UmbracoGlobalNavigation v-bind="global.properties" />
 	</header>
 	<main>
 		<slot />
 	</main>
-	<footer>
-		<UmbracoDocumentTypesGlobalFooter
-			v-if="data.footer.properties"
-			v-bind="data.footer.properties"
-		/>
+	<footer v-if="global.properties">
+		<UmbracoGlobalFooter v-bind="global.properties" />
 	</footer>
 </template>
 
 <script setup lang="ts">
-// retrieves global content from umbraco cd api
-const data = await useUmbracoGlobalContent();
+import type { UGlobal } from '#imports';
+
+const global = await umbraco.use<UGlobal>('/global');
 </script>

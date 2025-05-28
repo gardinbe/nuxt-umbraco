@@ -1,4 +1,4 @@
-export interface IUmbracoRichText {
-	blocks: IUmbracoContent[];
+export type URichText = /* @vue-ignore */ UDataType<{
+	blocks: UContent[];
 	markup: string;
-}
+}>;

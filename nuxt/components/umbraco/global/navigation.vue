@@ -7,7 +7,7 @@
 			<img
 				v-if="img"
 				class="w-auto h-full object-contain"
-				:src="getUmbracoMediaUrl(img.url)"
+				:src="media.url(img.url)"
 				:alt="img.name ?? ''"
 				:title="img.name ?? ''"
 				:width="img.width ?? ''"
@@ -16,7 +16,7 @@
 		</NuxtLink>
 		<menu class="flex items-center gap-8 h-full">
 			<li
-				v-for="link in links"
+				v-for="link in navigationLinks"
 				:key="link.destinationId"
 			>
 				<NuxtLink
@@ -30,8 +30,8 @@
 </template>
 
 <script setup lang="ts">
-import type { IUmbracoNavigation } from '#imports';
+import type { UGlobal } from '#imports';
 
-const props = defineProps<IUmbracoNavigation>();
-const img = props.logo[0];
+const props = defineProps<UGlobal>();
+const img = props.navigationLogo?.[0];
 </script>

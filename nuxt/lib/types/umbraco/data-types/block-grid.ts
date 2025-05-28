@@ -1,13 +1,15 @@
-export interface IUmbracoBlockGrid<I extends IUmbracoBlockGridItem = IUmbracoBlockGridItem> {
-	gridColumns: number;
-	items: I[];
-}
+export type UBlockGrid<I extends UBlockGridItem = UBlockGridItem> =
+	/* @vue-ignore */ UDataType<{
+		gridColumns: number;
+		items: I[];
+	}>;
 
-export interface IUmbracoBlockGridItem<C extends IUmbracoContent = IUmbracoContent> {
-	rowSpan: number;
-	columnSpan: number;
-	areaGridColumns: number;
-	areas: unknown[];
-	content: C;
-	settings: unknown;
-}
+export type UBlockGridItem<C extends UContent = UContent> =
+	/* @vue-ignore */ UDataType<{
+		rowSpan: number;
+		columnSpan: number;
+		areaGridColumns: number;
+		areas: unknown[];
+		content: C;
+		settings: unknown;
+	}>;

@@ -1,7 +1,12 @@
 <template>
 	<div class="std-container">
-		<h1>{{ error.statusCode }}</h1>
-		<p>{{ error.message }}</p>
+		<h1 v-html="error.statusCode" />
+		<p v-html="error.message" />
+		<code
+			v-if="isDev && error.stack"
+			class="std-codeblock"
+			v-html="error.stack"
+		/>
 		<button
 			class="link"
 			@click="clearError({ redirect: '/' })"
@@ -12,7 +17,9 @@
 </template>
 
 <script setup lang="ts">
-import type { NuxtError } from 'nuxt/app';
+import type { NuxtError } from '#app';
+
+const isDev = import.meta.dev;
 
 defineProps<{
 	error: NuxtError;

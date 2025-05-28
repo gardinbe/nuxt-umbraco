@@ -1,13 +1,21 @@
 @layer utilities {
 	.unstyled-list {
 		@apply space-y-0
-			pl-0
-			list-none;
+		pl-0
+		list-none;
 	}
 
 	.std-container {
 		@apply container
-			mx-auto
-			px-4;
+		mx-auto
+		px-4;
+	}
+
+	.std-codeblock {
+		@apply block
+		px-3
+		py-2
+		rounded
+		whitespace-pre-wrap;
 	}
 }

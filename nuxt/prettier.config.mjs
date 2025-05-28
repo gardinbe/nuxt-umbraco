@@ -3,7 +3,7 @@
 /** @type {import('prettier').Config} */
 export default {
 	singleQuote: true,
-	printWidth: 100,
+	printWidth: 80,
 	useTabs: true,
 	tabWidth: 2,
 	trailingComma: 'none',

@@ -1,3 +1,3 @@
-export type IUmbracoImageMediaPicker = IUmbracoImageMediaPickerItem[];
+export type UImageMediaPicker = /* @vue-ignore */ UImageMediaPickerItem[];
 
-export type IUmbracoImageMediaPickerItem = IUmbracoMediaWithCrops;
+export type UImageMediaPickerItem = /* @vue-ignore */ UMediaWithCrops;

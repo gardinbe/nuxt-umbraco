@@ -1,4 +1,4 @@
-export interface IUmbracoPageMetaComposition {
-	metaTitle: string | null;
-	metaDescription: string | null;
-}
+export type UPageMetaComposition = /* @vue-ignore */ UComposition<{
+	pageMetaTitle: string;
+	pageMetaDescription: string;
+}>;

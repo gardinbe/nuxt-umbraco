@@ -1,6 +1,6 @@
-export type IUmbracoMultiUrlPicker = IUmbracoMultiUrlPickerItem[];
+export type UMultiUrlPicker = /* @vue-ignore */ UMultiUrlPickerItem[];
 
-export interface IUmbracoMultiUrlPickerItem {
+export type UMultiUrlPickerItem = /* @vue-ignore */ UDataType<{
 	url: string | null;
 	queryString: string | null;
 	title: string;
@@ -15,4 +15,4 @@ export interface IUmbracoMultiUrlPickerItem {
 		};
 	};
 	linkType: string;
-}
+}>;
