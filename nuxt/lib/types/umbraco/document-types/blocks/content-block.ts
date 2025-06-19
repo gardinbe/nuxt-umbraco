@@ -1,3 +1,3 @@
-export type UContentBlock = /* @vue-ignore */ UDocumentType<{
-	body: URichText;
-}>;
+export type UContentBlock = {
+	readonly body: URichText | null;
+};

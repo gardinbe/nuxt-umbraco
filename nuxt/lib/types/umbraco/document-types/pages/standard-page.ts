@@ -1,5 +1,5 @@
-export type UStandardPage = /* @vue-ignore */ UDocumentType<
-	UPageMetaComposition & {
-		body: UBlockGrid;
-	}
->;
+import type { UPageMetaComposition } from '#imports';
+
+export type UDefaultPage = UPageMetaComposition & {
+	readonly body: UBlockGrid | null;
+};

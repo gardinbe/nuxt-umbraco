@@ -1,18 +1,20 @@
-export type UMultiUrlPicker = /* @vue-ignore */ UMultiUrlPickerItem[];
+export type UMultiUrlPicker = UMultiUrlPickerItem[];
 
-export type UMultiUrlPickerItem = /* @vue-ignore */ UDataType<{
-	url: string | null;
-	queryString: string | null;
-	title: string;
-	target: string | null;
-	destinationId: `${string}-${string}-${string}-${string}-${string}`;
-	destinationType: string;
-	route: {
-		path: string;
-		startItem: {
-			id: `${string}-${string}-${string}-${string}-${string}`;
-			path: string;
+export type UMultiUrlPickerItem = {
+	readonly url: string | null;
+	readonly queryString: string | null;
+	readonly title: string;
+	readonly target: string | null;
+	readonly destinationId:
+		| `${string}-${string}-${string}-${string}-${string}`
+		| null;
+	readonly destinationType: string | null;
+	readonly route: {
+		readonly path: string | null;
+		readonly startItem: {
+			readonly id: `${string}-${string}-${string}-${string}-${string}` | null;
+			readonly path: string | null;
 		};
-	};
-	linkType: string;
-}>;
+	} | null;
+	readonly linkType: string | null;
+};

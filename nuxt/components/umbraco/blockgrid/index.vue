@@ -28,6 +28,6 @@ import type { UBlockGrid } from '#imports';
 const props = defineProps<UBlockGrid>();
 const blocks = props.items.map((i) => ({
 	data: i,
-	component: resolve.component(i.content.contentType)
+	component: umbracoResolver.resolveBlock(i.content.contentType)
 }));
 </script>

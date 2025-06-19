@@ -1,4 +1,4 @@
-export const media = {
+export const umbracoMedia = {
 	/**
 	 * Returns the full URL for an Umbraco media item path.
 	 * @param path - Media item path.

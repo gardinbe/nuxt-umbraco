@@ -1,5 +1,5 @@
 <template>
-	<div class="std-container">
+	<div class="std-container py-4">
 		<h1>Heading One</h1>
 		<p>Paragraph One</p>
 		<h2>Heading Two</h2>
@@ -22,10 +22,14 @@
 			<li>Ordered List Two</li>
 			<li>Ordered List Three</li>
 		</ol>
-		<NuxtLink to="/">Return to homepage</NuxtLink>
 	</div>
 </template>
 
 <script setup lang="ts">
-useHead({ title: createMetaTitle('Typography') });
+definePageMeta({
+	layout: 'umbraco-default'
+});
+useHead({
+	title: createMetaTitle('Typography')
+});
 </script>

@@ -5,7 +5,10 @@
 	<main>
 		<slot />
 	</main>
-	<footer v-if="global.properties">
+	<footer
+		v-if="global.properties"
+		class="mt-auto"
+	>
 		<UmbracoGlobalFooter v-bind="global.properties" />
 	</footer>
 </template>
@@ -13,5 +16,5 @@
 <script setup lang="ts">
 import type { UGlobal } from '#imports';
 
-const global = await umbraco.use<UGlobal>('/global');
+const global = await useUmbraco<UGlobal>('/global');
 </script>

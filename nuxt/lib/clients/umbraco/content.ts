@@ -5,9 +5,9 @@ const client = createClient<paths>({
 	baseUrl: 'http://localhost:55235'
 });
 
-export const content = {
+export const umbracoContent = {
 	/**
-	 * Umbraco UContent Delivery API client.
+	 * Umbraco Content Delivery API client.
 	 */
 	client,
 

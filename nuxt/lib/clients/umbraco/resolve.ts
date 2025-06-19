@@ -8,23 +8,29 @@ export type LayoutMap = {
 	[key: string]: LayoutKey;
 };
 
-export const resolve = {
+export const umbracoResolver = {
 	/**
-	 * Returns the component for a given Umbraco content type alias.
-	 * @param alias - Component content type alias.
-	 * @returns Component, or null.
+	 * Returns the block component for a given Umbraco content type alias.
+	 * @param alias - Block content type alias.
+	 * @returns Block component, or null.
 	 */
-	component: (alias: string | null | undefined): Component | null =>
-		(alias &&
-			((components.pages as ComponentMap)[alias] ||
-				(components.blocks as ComponentMap)[alias])) ||
-		null,
+	resolveBlock: (alias: string | null | undefined): Component | null =>
+		(alias && (umbracoComponents.blocks as ComponentMap)[alias]) || null,
+
+	/**
+	 * Returns the page component for a given Umbraco content type alias.
+	 * @param alias - Page content type alias.
+	 * @returns Page component, or null.
+	 */
+	resolvePage: (alias: string | null | undefined): Component | null =>
+		(alias && (umbracoComponents.pages as ComponentMap)[alias]) || null,
 
 	/**
 	 * Returns the layout key for a given Umbraco page content type alias.
 	 * @param alias - Umbraco page content type alias.
 	 * @returns Layout key.
 	 */
-	layout: (alias: string | null | undefined): LayoutKey =>
-		(alias && (components.layouts as LayoutMap)[alias]) || 'umbraco-default'
+	resolveLayoutKey: (alias: string | null | undefined): LayoutKey =>
+		(alias && (umbracoComponents.layouts as LayoutMap)[alias]) ||
+		'umbraco-default'
 } as const;

@@ -1,6 +1,7 @@
 <template>
 	<div
 		v-if="body"
+		class="std-container py-4"
 		v-html="body.markup"
 	/>
 </template>

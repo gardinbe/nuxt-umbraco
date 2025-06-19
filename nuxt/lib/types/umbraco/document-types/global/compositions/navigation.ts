@@ -1,4 +1,4 @@
-export type UNavigationComposition = /* @vue-ignore */ UComposition<{
-	navigationLogo: UImageMediaPicker;
-	navigationLinks: UMultiUrlPicker;
-}>;
+export type UNavigationComposition = {
+	readonly navigationLogo: UImageMediaPicker | null;
+	readonly navigationLinks: UMultiUrlPicker | null;
+};

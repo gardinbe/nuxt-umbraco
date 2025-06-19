@@ -16,6 +16,15 @@
 		px-3
 		py-2
 		rounded
-		whitespace-pre-wrap;
+		whitespace-pre-wrap
+		overflow-auto
+		max-h-[32rem];
+		scrollbar-color: theme('colors.slate.800') theme('colors.slate.700');
+
+		&,
+		pre {
+			@apply whitespace-pre-wrap
+			break-words;
+		}
 	}
 }

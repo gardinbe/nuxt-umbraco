@@ -1,5 +1,5 @@
 <template>
-	<div class="flex items-center">
+	<div class="flex items-center px-5 py-2 bg-slate-700 text-sm">
 		<div
 			v-if="footerContent"
 			v-html="footerContent.markup"
@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import type { UGlobal } from '#imports';
+import type { UFooterComposition } from '#imports';
 
-defineProps<UGlobal>();
+defineProps<UFooterComposition>();
 </script>

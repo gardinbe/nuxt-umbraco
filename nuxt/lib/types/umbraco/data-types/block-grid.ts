@@ -1,15 +1,13 @@
-export type UBlockGrid<I extends UBlockGridItem = UBlockGridItem> =
-	/* @vue-ignore */ UDataType<{
-		gridColumns: number;
-		items: I[];
-	}>;
+export type UBlockGrid<I extends UBlockGridItem = UBlockGridItem> = {
+	readonly gridColumns: number;
+	readonly items: I[];
+};
 
-export type UBlockGridItem<C extends UContent = UContent> =
-	/* @vue-ignore */ UDataType<{
-		rowSpan: number;
-		columnSpan: number;
-		areaGridColumns: number;
-		areas: unknown[];
-		content: C;
-		settings: unknown;
-	}>;
+export type UBlockGridItem<C extends UContent = UContent> = {
+	readonly rowSpan: number;
+	readonly columnSpan: number;
+	readonly areaGridColumns: number;
+	readonly areas: unknown[];
+	readonly content: C;
+	readonly settings: unknown;
+};

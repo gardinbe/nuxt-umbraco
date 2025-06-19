@@ -1,12 +1,21 @@
 <template>
 	<div class="std-container">
-		<h1 v-html="error.statusCode" />
-		<p v-html="error.message" />
-		<code
-			v-if="isDev && error.stack"
-			class="std-codeblock"
-			v-html="error.stack"
-		/>
+		<template v-if="isDev">
+			<h1 v-html="error.statusCode" />
+			<p
+				v-if="!error.stack"
+				v-html="error.message"
+			/>
+			<code
+				v-else
+				class="std-codeblock"
+				v-html="error.stack"
+			/>
+		</template>
+		<template v-else>
+			<h1>Error</h1>
+			<p>The application has encountered an error. Please try again later.</p>
+		</template>
 		<button
 			class="link"
 			@click="clearError({ redirect: '/' })"

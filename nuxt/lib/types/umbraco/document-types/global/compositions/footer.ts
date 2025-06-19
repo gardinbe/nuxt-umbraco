@@ -1,3 +1,3 @@
-export type UFooterComposition = /* @vue-ignore */ UComposition<{
-	footerContent: URichText;
-}>;
+export type UFooterComposition = {
+	readonly footerContent: URichText | null;
+};

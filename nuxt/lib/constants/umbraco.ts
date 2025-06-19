@@ -1,26 +1,24 @@
-export const components = {
+import { defineAsyncComponent as def } from '#imports';
+
+export const umbracoComponents = {
 	/**
 	 * Map of Umbraco content type aliases to layout keys.
 	 */
 	layouts: {
-		standardPage: 'umbraco-default'
+		defaultPage: 'umbraco-default'
 	} as const satisfies LayoutMap,
 
 	/**
 	 * Map of Umbraco content type aliases to page components.
 	 */
 	pages: {
-		standardPage: defineAsyncComponent(
-			() => import('~/components/umbraco/pages/standard.vue')
-		)
+		defaultPage: def(() => import('~/components/umbraco/pages/default.vue'))
 	} as const satisfies ComponentMap,
 
 	/**
 	 * Map of Umbraco content type aliases to block components.
 	 */
 	blocks: {
-		contentBlock: defineAsyncComponent(
-			() => import('~/components/umbraco/blocks/content.vue')
-		)
+		contentBlock: def(() => import('~/components/umbraco/blocks/content.vue'))
 	} as const satisfies ComponentMap
-};
+} as const;

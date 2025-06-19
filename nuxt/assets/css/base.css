@@ -1,8 +1,19 @@
 @layer base {
 	body {
-		@apply bg-slate-800
+		@apply flex
+		flex-col
+		min-h-[100dvh]
+		bg-slate-800
 		text-white
 		font-serif;
+		scrollbar-width: thin;
+		scrollbar-color: theme('colors.slate.800') theme('colors.slate.900');
+	}
+
+	#__nuxt {
+		@apply flex
+		flex-col
+		flex-1;
 	}
 
 	a,

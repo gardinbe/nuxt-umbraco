@@ -1,3 +1,1 @@
-export type UGlobal = /* @vue-ignore */ UDocumentType<
-	UFooterComposition & UNavigationComposition
->;
+export type UGlobal = UFooterComposition & UNavigationComposition;

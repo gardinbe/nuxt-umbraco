@@ -16,5 +16,8 @@ export default {
 	compatibilityDate: '2024-11-01',
 	future: {
 		compatibilityVersion: 4
+	},
+	experimental: {
+		asyncContext: true
 	}
 } satisfies NuxtConfig;

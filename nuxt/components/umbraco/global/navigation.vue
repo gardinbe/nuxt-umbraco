@@ -1,5 +1,5 @@
 <template>
-	<nav class="flex items-center h-20 p-5 gap-8 bg-slate-900">
+	<nav class="flex items-center h-16 px-5 py-3 gap-8 bg-slate-900">
 		<NuxtLink
 			class="flex h-full"
 			to="/"
@@ -7,31 +7,29 @@
 			<img
 				v-if="img"
 				class="w-auto h-full object-contain"
-				:src="media.url(img.url)"
+				:src="umbracoMedia.url(img.url)"
 				:alt="img.name ?? ''"
 				:title="img.name ?? ''"
 				:width="img.width ?? ''"
 				:height="img.height ?? ''"
 			/>
 		</NuxtLink>
-		<menu class="flex items-center gap-8 h-full">
+		<menu class="flex items-center gap-7 h-full">
 			<li
-				v-for="link in navigationLinks"
-				:key="link.destinationId"
+				v-for="(link, i) in navigationLinks"
+				:key="i"
 			>
-				<NuxtLink
-					class="text-xl font-bold"
-					:to="link.route.path"
-					>{{ link.title }}</NuxtLink
-				>
+				<NuxtLink :to="link.route?.path ?? link.url ?? ''">
+					{{ link.title }}
+				</NuxtLink>
 			</li>
 		</menu>
 	</nav>
 </template>
 
 <script setup lang="ts">
-import type { UGlobal } from '#imports';
+import type { UNavigationComposition } from '#imports';
 
-const props = defineProps<UGlobal>();
+const props = defineProps<UNavigationComposition>();
 const img = props.navigationLogo?.[0];
 </script>
