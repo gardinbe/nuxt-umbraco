@@ -35,13 +35,16 @@ export const useUmbracoApi = () => {
 					},
 					null
 				];
-			} catch {
+			} catch (e) {
 				return [
 					null,
-					createError({
-						statusCode: 500,
-						statusMessage: 'One or more errors occurred during Umbraco request'
-					})
+					isNuxtError(e)
+						? e
+						: createError({
+								statusCode: 500,
+								statusMessage:
+									'One or more errors occurred during Umbraco request'
+							})
 				];
 			}
 		},
