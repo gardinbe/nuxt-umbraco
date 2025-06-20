@@ -19,5 +19,10 @@ export default {
 	},
 	experimental: {
 		asyncContext: true
+	},
+	runtimeConfig: {
+		public: {
+			umbracoUrl: process.env.UMBRACO_URL || 'http://localhost:55235'
+		}
 	}
 } satisfies NuxtConfig;

@@ -7,7 +7,7 @@
 		"build": "nuxt build",
 		"dev": "nuxt dev",
 		"preview": "nuxt preview",
-		"openapi": "openapi-typescript http://localhost:55235/umbraco/swagger/delivery/swagger.json -o lib/clients/umbraco/openapi.generated.ts",
+		"openapi": "openapi-typescript http://localhost:55235/umbraco/swagger/delivery/swagger.json -o composables/umbraco/api.openapi.generated",
 		"format": "eslint --fix . && prettier --write ."
 	},
 	"dependencies": {

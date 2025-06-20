@@ -25,9 +25,11 @@
 <script setup lang="ts">
 import type { UBlockGrid } from '#imports';
 
+const { getBlock } = useUmbracoResolver();
+
 const props = defineProps<UBlockGrid>();
 const blocks = props.items.map((i) => ({
 	data: i,
-	component: umbracoResolver.resolveBlock(i.content.contentType)
+	component: getBlock(i.content.contentType)
 }));
 </script>

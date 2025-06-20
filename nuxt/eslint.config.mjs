@@ -10,6 +10,7 @@ export default withNuxt({
 		'vue/no-v-html': 'off',
 		'vue/no-v-text-v-html-on-component': 'off',
 		'vue/no-multiple-template-root': 'off',
+		'import/order': 'error',
 		'import/first': 'error',
 		'import/no-named-as-default': 'error',
 		'import/no-named-as-default-member': 'error',

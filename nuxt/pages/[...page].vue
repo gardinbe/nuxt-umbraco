@@ -15,15 +15,11 @@
 <script setup lang="ts">
 definePageMeta({
 	middleware: async (to) => {
-		const page = await useUmbraco(to.path);
-		useState('page').value = page;
+		const { update, page } = useUmbraco();
+		const { getLayoutKey } = useUmbracoResolver();
 
-		// useAsyncData does de-duplicate requests, but not between middleware execution and page
-		// rendering. so we need to set the response data from the middleware into a state accessible
-		// by the client and read it within the page component, so as to not send two api requests when
-		// changing route on the client.
-
-		const layout = umbracoResolver.resolveLayoutKey(page.contentType);
+		await update(to.path);
+		const layout = getLayoutKey(page.value.contentType);
 
 		if (import.meta.server || useNuxtApp().isHydrating) {
 			to.meta.layout = layout;
@@ -34,6 +30,8 @@ definePageMeta({
 	}
 });
 
-const page = useState<UContent>('page').value;
-const component = umbracoResolver.resolvePage(page.contentType);
+const { page } = useUmbraco();
+const { getPage } = useUmbracoResolver();
+
+const component = getPage(page.value.contentType);
 </script>

@@ -14,7 +14,6 @@
 </template>
 
 <script setup lang="ts">
-import type { UGlobal } from '#imports';
-
-const global = await useUmbraco<UGlobal>('/global');
+const { update, global } = useUmbraco();
+await update();
 </script>
