@@ -5,6 +5,5 @@
  */
 export const isPromiseLike = <T>(
 	value: T | PromiseLike<T>
-): value is PromiseLike<T> => {
-	return typeof value === 'object' && value !== null && 'then' in value;
-};
+): value is PromiseLike<T> =>
+	typeof value === 'object' && value !== null && 'then' in value;

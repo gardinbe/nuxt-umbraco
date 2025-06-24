@@ -9,5 +9,5 @@
 import type { UDefaultPage } from '#imports';
 
 const props = defineProps<UDefaultPage>();
-useUmbracoMeta(props);
+useUmbracoHead(props);
 </script>

@@ -22,6 +22,7 @@ export default {
 	},
 	runtimeConfig: {
 		public: {
+			siteName: 'Appius',
 			umbracoUrl: process.env.UMBRACO_URL || 'http://localhost:55235'
 		}
 	}

@@ -30,6 +30,6 @@ definePageMeta({
 	layout: 'umbraco-default'
 });
 useHead({
-	title: createMetaTitle('Typography')
+	title: useTitle('Typography')
 });
 </script>
