@@ -11,7 +11,6 @@
  */
 export const useUmbraco = () => {
 	const { get } = useUmbracoApi();
-
 	const global = useState<UContent<UGlobal>>('global');
 	const page = useState<UContent>('page');
 
@@ -40,10 +39,10 @@ export const useUmbraco = () => {
 		load: async (path?: string) => {
 			if (path && !global.value) {
 				[global.value, page.value] = await unwrapAll(
-					Promise.all([get<UGlobal>(UmbracoGlobalEndpoint), get(path)])
+					Promise.all([get<UGlobal>(UmbracoGlobalPath), get(path)])
 				);
 			} else if (!global.value) {
-				global.value = await unwrap(get<UGlobal>(UmbracoGlobalEndpoint));
+				global.value = await unwrap(get<UGlobal>(UmbracoGlobalPath));
 			} else if (path) {
 				page.value = await unwrap(get<UContent>(path));
 			}

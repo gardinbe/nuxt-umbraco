@@ -1,4 +1,4 @@
 /**
- * Endpoint for global Umbraco content.
+ * Path for global Umbraco content.
  */
-export const UmbracoGlobalEndpoint = '/global';
+export const UmbracoGlobalPath = '/global';

@@ -11,7 +11,7 @@ export const useUmbracoMedia = () => {
 		 * @param path - Media item path.
 		 * @returns Full URL.
 		 */
-		url: (path?: string | null | undefined): string =>
+		formatUrl: (path?: string | null | undefined): string =>
 			path ? config.public.umbracoUrl + path : ''
 	} as const;
 };

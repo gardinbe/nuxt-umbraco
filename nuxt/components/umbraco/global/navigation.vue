@@ -7,7 +7,7 @@
 			<img
 				v-if="img"
 				class="w-auto h-full object-contain"
-				:src="url(img.url)"
+				:src="formatUrl(img.url)"
 				:alt="img.name ?? ''"
 				:title="img.name ?? ''"
 				:width="img.width ?? ''"
@@ -30,7 +30,7 @@
 <script setup lang="ts">
 import type { UNavigationComposition } from '#imports';
 
-const { url } = useUmbracoMedia();
+const { formatUrl } = useUmbracoMedia();
 
 const props = defineProps<UNavigationComposition>();
 const img = props.navigationLogo?.[0];
